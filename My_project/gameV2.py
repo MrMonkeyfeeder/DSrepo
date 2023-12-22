@@ -38,5 +38,23 @@ def score_game(random_predict) -> int:
     print(f'Your algorythm predict the number mean at {score} times!')
     return (score)
 
+def binary_search(number: int) -> int:
+    """Binary search algorithm for guessing the number."""
+    count = 1
+    low = 1
+    high = 100
+    
+    while True:
+        guess = (low + high) // 2
+        if guess == number:
+            break
+        elif guess < number:
+            low = guess + 1
+        else:
+            high = guess - 1
+        count += 1
+        
+    return count
+
 if __name__ == '__main__':
-    score_game(random_predict)
+    score_game(binary_search)
